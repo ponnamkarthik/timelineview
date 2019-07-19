@@ -71,33 +71,38 @@ class _TimelineViewState extends State<TimelineView>
                 },
                 child: i == widget.activeIndex
                     ? Column(
+                        crossAxisAlignment: i == widget.labelWidgets.length - 1
+                            ? CrossAxisAlignment.end
+                            : i == 0
+                                ? CrossAxisAlignment.start
+                                : CrossAxisAlignment.center,
                         children: <Widget>[
                           widget.selectedWidget ??
                               Container(
-                                height: widget.circleRadius *2,
-                                width: widget.circleRadius *2,
-                                child: Center(
-                                  child: Animator(
+                                height: widget.circleRadius * 2,
+                                width: widget.circleRadius * 2,
+                                child: Animator(
                                     key: ValueKey(i),
-                                      cycles: 1,
-                                      duration: Duration(seconds: 2),
-                                      tween: Tween<double>(
-                                          begin: 0,
-                                          end: widget.circleRadius * 2),
-                                      builder: (anim) => Container(
-                                            width: anim.value,
-                                            height: anim.value,
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.circle,
-                                              color: Colors.white,
-                                              border: Border.all(
-                                                color: Colors.red,
-                                                width: anim.value / 4,
-                                              ),
+                                    cycles: 1,
+                                    duration: Duration(milliseconds: 500),
+                                    tween: Tween<double>(
+                                        begin: 0, end: widget.circleRadius * 2),
+                                    builder: (anim) => Container(
+                                          width: anim.value,
+                                          height: anim.value,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.white,
+                                            border: Border.all(
+                                              color: Colors.red,
+                                              width: anim.value / 4,
                                             ),
-                                          )),
-                                ),
+                                          ),
+                                        )),
                               ),
+                          SizedBox(
+                            height: 2.0,
+                          ),
                           if (widget.showLabels)
                             DefaultTextStyle(
                               style: widget.selectedTextStyle ??
@@ -109,6 +114,11 @@ class _TimelineViewState extends State<TimelineView>
                         ],
                       )
                     : Column(
+                        crossAxisAlignment: i == widget.labelWidgets.length - 1
+                            ? CrossAxisAlignment.end
+                            : i == 0
+                                ? CrossAxisAlignment.start
+                                : CrossAxisAlignment.center,
                         children: <Widget>[
                           widget.unSelectedWidget ??
                               Container(
@@ -122,6 +132,9 @@ class _TimelineViewState extends State<TimelineView>
                                   ),
                                 ),
                               ),
+                          SizedBox(
+                            height: 2.0,
+                          ),
                           if (widget.showLabels)
                             DefaultTextStyle(
                               style: widget.unSelectedTextStyle ??
