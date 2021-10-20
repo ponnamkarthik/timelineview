@@ -156,7 +156,7 @@ class _TimelineViewState extends State<TimelineView>
                                 if (widget.showLabels)
                                   DefaultTextStyle(
                                     style: widget.unSelectedTextStyle ??
-                                        Theme.of(context).textTheme.body1!,
+                                        Theme.of(context).textTheme.bodyText2!,
                                     child: widget.labelWidgets[i],
                                   )
                               ],

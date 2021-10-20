@@ -1,3 +1,7 @@
+## [1.0.1]
+
+- Replaced deprecated `body1` with `bodyText2`
+
 ## [1.0.0]
 
 - Added Example Project
