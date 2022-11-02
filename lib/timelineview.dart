@@ -37,9 +37,7 @@ class TimelineView extends StatefulWidget {
     this.unFinishedLineColor,
     this.hasFinished = false,
   })  : assert(
-            labelWidgets.length > 1, "labelWidgets should be greater than 1"),
-        assert(activeIndex >= 0 && activeIndex < labelWidgets.length,
-            "Active Index should be between 0 to Length of lableWidgets");
+            labelWidgets.length > 1, "labelWidgets should be greater than 1");
 
   @override
   _TimelineViewState createState() => _TimelineViewState();

@@ -1,3 +1,7 @@
+## [1.0.2]
+
+- Now we can pass any value other then list index will result nothing will be highlited
+
 ## [1.0.1]
 
 - Replaced deprecated `body1` with `bodyText2`

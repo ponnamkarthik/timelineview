@@ -1,6 +1,6 @@
 name: timelineview
 description: A Flutter package to show a timeline kind of view
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/PonnamKarthik/timelineview
 
 environment:
